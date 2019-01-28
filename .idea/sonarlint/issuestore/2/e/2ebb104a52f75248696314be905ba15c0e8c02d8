@@ -1,0 +1,13 @@
+
+asquid:UnusedPrivateMethodG"7Remove this unused private "randomAlphanumeric" method.(¾Äƒ½ıÿÿÿÿ
+\squid:UnusedPrivateMethodK"2Remove this unused private "randomNumeric" method.(é›¯ úÿÿÿÿ
+Usquid:UnusedPrivateMethod?"0Remove this unused private "randomAscii" method.(èÂ§
+isquid:S3776i"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ÌÌ·
+Usquid:UnusedPrivateMethod["+Remove this unused private "random" method.(…¸Ø’ûÿÿÿÿ
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(îÒä•üÿÿÿÿ
+Usquid:UnusedPrivateMethod;"+Remove this unused private "random" method.(…ë™ÿÿÿÿÿ
+^squid:S00112'"FDefine and throw a dedicated exception instead of using a generic one.(®Ü¹¦
+Esquid:S21403")Use "java.util.Random.nextInt()" instead.(Ö’¡¡ÿÿÿÿÿ
+¡%squid:RedundantThrowsDeclarationCheck"kRemove the declaration of thrown exception 'org.hibernate.HibernateException' which is a runtime exception.(öëÓ—ÿÿÿÿÿ
+Osquid:UnusedPrivateMethodW"+Remove this unused private "random" method.(³ÏÕ"
+%squid:RedundantThrowsDeclarationCheck'"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(®Ü¹¦
