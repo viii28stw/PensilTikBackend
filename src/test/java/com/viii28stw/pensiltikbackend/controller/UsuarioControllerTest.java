@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikbackend.controller;
 
 
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -78,6 +79,7 @@ public class UsuarioControllerTest {
     public void atualizarUsuarioNaoPodeRetornarNuloEOUsuarioASerAtualizadoDeveConterID() throws IOException {
         @SuppressWarnings("rawtypes")
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -120,7 +122,6 @@ public class UsuarioControllerTest {
         then(responseEntityUsuario2.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertNotNull(responseEntityUsuario2.getBody());
         then(responseEntityUsuario2.getBody() instanceof UsuarioDto);
-
 
         UsuarioDto usuarioDto3 = mapper.readValue(responseEntityUsuario2.getBody().toString(), UsuarioDto.class);
 
@@ -284,6 +285,7 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         HttpEntity request = new HttpEntity<>(httpHeaders);
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -316,7 +318,7 @@ public class UsuarioControllerTest {
         assertEquals(usuarioDto2, usuarioDto1);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
-                .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
+                .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
         then(responseEntityUsuario3.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -333,6 +335,7 @@ public class UsuarioControllerTest {
     public void buscarTodosOsUsuarios() throws IOException {
         @SuppressWarnings("rawtypes")
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -372,6 +375,7 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         HttpEntity request = new HttpEntity<>(httpHeaders);
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -411,6 +415,7 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         HttpEntity request = new HttpEntity<>(httpHeaders);
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -450,6 +455,7 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         HttpEntity request = new HttpEntity<>(httpHeaders);
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JodaModule());
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
