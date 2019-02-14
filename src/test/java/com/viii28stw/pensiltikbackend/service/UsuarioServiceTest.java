@@ -32,7 +32,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -47,7 +46,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -57,7 +55,6 @@ public class UsuarioServiceTest {
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
         usuarioDto.setSenha(randomAlphanumeric(8));
         usuarioDto.setSexoEnum(SexoEnum.FEMININO);
-        usuarioDto.setDataNascimento(new DateTime());
 
         assertNotNull(usuarioService.atualizarUsuario(usuarioDto));
 
@@ -76,7 +73,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -87,7 +83,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -98,7 +93,6 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -109,7 +103,6 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -120,7 +113,6 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
-                .dataNascimento(new DateTime())
                 .build());
 
         usuarioService.salvarUsuario(usuarioDto);
@@ -134,7 +126,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -156,7 +147,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -176,7 +166,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -193,7 +182,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -210,7 +198,6 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);

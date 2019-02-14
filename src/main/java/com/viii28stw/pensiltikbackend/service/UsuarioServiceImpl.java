@@ -30,7 +30,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                     .email(usuario.getEmail())
                     .senha(usuario.getSenha())
                     .sexoEnum(usuario.getSexoEnum())
-                    .dataNascimento(usuario.getDataNascimento())
                     .build();
 
         } else throw new NoSuchElementException("Não existe usuário com o ID informado");
@@ -47,7 +46,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                     .email(usuario.getEmail())
                     .senha(usuario.getSenha())
                     .sexoEnum(usuario.getSexoEnum())
-                    .dataNascimento(usuario.getDataNascimento())
                     .build());
         }
         return usuariosDto;
@@ -79,7 +77,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                 .email(usuarioDto.getEmail())
                 .senha(usuarioDto.getSenha())
                 .sexoEnum(usuarioDto.getSexoEnum())
-                .dataNascimento(usuarioDto.getDataNascimento())
                 .build());
 
         return UsuarioDto.builder()
@@ -89,7 +86,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                 .email(usuario.getEmail())
                 .senha(usuario.getSenha())
                 .sexoEnum(usuario.getSexoEnum())
-                .dataNascimento(usuario.getDataNascimento())
                 .build();
     }
 
@@ -114,7 +110,6 @@ public class UsuarioServiceImpl implements UsuarioService {
                 .email(usuario.getEmail())
                 .senha(usuario.getSenha())
                 .sexoEnum(usuario.getSexoEnum())
-                .dataNascimento(usuario.getDataNascimento())
                 .build();
     }
 

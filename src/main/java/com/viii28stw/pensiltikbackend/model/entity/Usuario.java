@@ -3,7 +3,6 @@ package com.viii28stw.pensiltikbackend.model.entity;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -23,8 +22,7 @@ public class Usuario implements Serializable {
 
     @GenericGenerator(name = "IdGenerator", strategy = "com.viii28stw.pensiltikbackend.util.IdGenerator")
     @GeneratedValue(generator = "IdGenerator")
-    @Id
-    @Column(name = "ID", length = 25)
+    @Id @Column(name = "ID", length = 25)
     private String id;
 
     @Column(name = "NOME", length = 25, nullable = false)
@@ -33,19 +31,13 @@ public class Usuario implements Serializable {
     @Column(name = "SOBRE_NOME", length = 25, nullable = false)
     private String sobreNome;
 
-    @Email
-    @Column(name = "EMAIL", length = 25, nullable = false)
+    @Email @Column(name = "EMAIL", length = 25, nullable = false)
     private String email;
 
     @Column(name = "SENHA", length = 8, nullable = false)
     private String senha;
 
-    @Enumerated(EnumType.ORDINAL)
-    @Column(name = "SEXO", nullable = false)
+    @Enumerated(EnumType.ORDINAL) @Column(name = "SEXO", nullable = false)
     private SexoEnum sexoEnum;
-
-    @Column(name = "DATA_NASCIMENTO", nullable = false)
-    private DateTime dataNascimento;
-
 
 }
