@@ -1,11 +1,9 @@
 package com.viii28stw.pensiltikbackend.controller;
 
-
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +12,14 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
-import com.eighttwentyeightsoftware.pensiltikbackend.util.UrlPrefixFactory;
+import com.viii28stw.pensiltikbackend.util.UrlPrefixFactory;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphabetic;
-import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphanumeric;
+import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphabetic;
+import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -45,8 +40,7 @@ public class UsuarioControllerTest {
     private static final String ATUALIZAR_USUARIO = "/atualizarusuario/";
     private static final String DELETAR_USUARIO_POR_ID = "/deletarusuarioporid/";
     private static final String FAZER_LOGIN = "/fazerlogin/";
-    
-    
+
     @Test
     public void salvarUsuarioNaoPodeRetornarNuloEnaoDeixarSalvarDoisUsuariosComEmailJaExistente() {
         @SuppressWarnings("rawtypes")

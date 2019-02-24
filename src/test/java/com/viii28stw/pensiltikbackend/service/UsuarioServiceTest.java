@@ -2,18 +2,16 @@ package com.viii28stw.pensiltikbackend.service;
 
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
-import org.joda.time.DateTime;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphabetic;
-import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphanumeric;
+import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphabetic;
+import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 import static org.junit.Assert.*;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
-import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -202,13 +200,13 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioDto);
 
-        UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+        UsuarioDto usuarioDto1 = usuarioService.login(usuarioDto.getEmail(), usuarioDto.getSenha());
 
         assertNotNull(usuarioDto1);
         assertEquals(usuarioDto1, usuarioDto);
 
         assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
-        usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+        usuarioService.login(usuarioDto.getEmail(), usuarioDto.getSenha());
     }
 
 }

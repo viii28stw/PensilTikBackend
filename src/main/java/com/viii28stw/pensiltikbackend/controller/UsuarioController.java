@@ -44,9 +44,9 @@ public class UsuarioController {
         return new ResponseEntity<>(usuarioService.deletarUsuarioPorId(id), HttpStatus.OK);
     }
 
-    @GetMapping("/fazerlogin/{email}/{senha}")
+    @GetMapping("/login/{email}/{senha}")
     public ResponseEntity<UsuarioDto> login(@PathVariable("email") String email, @PathVariable("senha") String senha) {
-        return new ResponseEntity<>(usuarioService.fazerLogin(email, senha), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
     }
 
 }

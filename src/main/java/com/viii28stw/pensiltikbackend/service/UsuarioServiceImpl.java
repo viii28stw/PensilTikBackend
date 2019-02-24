@@ -96,7 +96,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public UsuarioDto fazerLogin(String email, String senha){
+    public UsuarioDto login(String email, String senha){
         if(usuarioRepository.findByEmailAndSenha(email, senha) == null) {
             throw new NoSuchElementException("E-mail ou senha incorreta");
         }

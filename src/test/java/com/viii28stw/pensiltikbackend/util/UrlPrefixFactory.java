@@ -1,4 +1,4 @@
-package com.eighttwentyeightsoftware.pensiltikbackend.util;
+package com.viii28stw.pensiltikbackend.util;
 
 public class UrlPrefixFactory {
 
