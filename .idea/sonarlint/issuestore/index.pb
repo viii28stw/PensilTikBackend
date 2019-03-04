@@ -29,3 +29,5 @@ r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/util/RandomValue.java,4\9\49484a860d21dbba65f86f7376d3cdbc9435b2a4
 k
 ;src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java,e\3\e3baa15889346a3abc20bc0c468ba7567b148969
+t
+Dsrc/main/java/com/viii28stw/pensiltikbackend/HttpsConfiguration.java,6\2\629a39f12b47e47546927abf88897a6771d2dd69

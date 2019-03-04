@@ -1,9 +1,15 @@
 package com.viii28stw.pensiltikbackend.controller;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +17,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.*;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.viii28stw.pensiltikbackend.util.UrlPrefixFactory;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+
+import javax.net.ssl.SSLContext;
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -40,6 +52,16 @@ public class UsuarioControllerTest {
     private static final String ATUALIZAR_USUARIO = "/atualizarusuario/";
     private static final String DELETAR_USUARIO_POR_ID = "/deletarusuarioporid/";
     private static final String FAZER_LOGIN = "/fazerlogin/";
+
+    @Before
+    public void init() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        // Turn off http client certificate verification (Trust self signed)
+        SSLContext sslContext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
+        SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(sslContext);
+        HttpClient httpClient = HttpClients.custom().setSSLSocketFactory(socketFactory).build();
+        testRestTemplate = new TestRestTemplate();
+        ((HttpComponentsClientHttpRequestFactory) testRestTemplate.getRestTemplate().getRequestFactory()).setHttpClient(httpClient);
+    }
 
     @Test
     public void salvarUsuarioNaoPodeRetornarNuloENaoDeixarSalvarDoisUsuariosComEmailJaExistente() {
