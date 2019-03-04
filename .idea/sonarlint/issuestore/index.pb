@@ -27,3 +27,5 @@ w
 Gsrc/test/java/com/viii28stw/pensiltikbackend/util/UrlPrefixFactory.java,8\7\87567aa68d090c6733a078746a591ca0176ff626
 r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/util/RandomValue.java,4\9\49484a860d21dbba65f86f7376d3cdbc9435b2a4
+k
+;src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java,e\3\e3baa15889346a3abc20bc0c468ba7567b148969

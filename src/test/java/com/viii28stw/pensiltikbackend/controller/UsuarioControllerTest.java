@@ -42,7 +42,7 @@ public class UsuarioControllerTest {
     private static final String FAZER_LOGIN = "/fazerlogin/";
 
     @Test
-    public void salvarUsuarioNaoPodeRetornarNuloEnaoDeixarSalvarDoisUsuariosComEmailJaExistente() {
+    public void salvarUsuarioNaoPodeRetornarNuloENaoDeixarSalvarDoisUsuariosComEmailJaExistente() {
         @SuppressWarnings("rawtypes")
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
